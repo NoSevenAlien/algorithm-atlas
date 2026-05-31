@@ -702,7 +702,7 @@ const state = {
   level: "all",
   sort: "priority",
   compare: new Set(),
-  lang: ["zh", "en"].includes(localStorage.getItem("atlas-lang")) ? localStorage.getItem("atlas-lang") : "zh"
+  lang: ["zh", "en", "fr"].includes(localStorage.getItem("atlas-lang")) ? localStorage.getItem("atlas-lang") : "zh"
 };
 
 const i18n = {
@@ -757,6 +757,7 @@ const i18n = {
     searchPlaceholder: "输入算法、任务、应用场景...",
     result: (shown, total) => `共 ${shown} 个算法，已收录 ${total} 个主流条目`,
     compareEmpty: "尚未选择算法。",
+    clearCompare: "清除",
     compareAction: "对比",
     detailAction: "详情",
     maxCompare: "最多选择 3 个算法进行对比。",
@@ -818,6 +819,7 @@ const i18n = {
     searchPlaceholder: "Search algorithms, tasks, or use cases...",
     result: (shown, total) => `${shown} algorithms shown from ${total} mainstream entries`,
     compareEmpty: "No algorithm selected yet.",
+    clearCompare: "Clear",
     compareAction: "Compare",
     detailAction: "Details",
     maxCompare: "Select up to 3 algorithms for comparison.",
@@ -827,6 +829,68 @@ const i18n = {
     prereq: "Prerequisites",
     strongPoint: "Strength",
     limitation: "Limit"
+  },
+  fr: {
+    brandName: "Algorithm Atlas",
+    brandSub: "Bibliotheque de machine learning et deep learning",
+    navLibrary: "Algorithmes",
+    navMap: "Carte",
+    navTracks: "Parcours",
+    navGlossary: "Glossaire",
+    heroEyebrow: "Encyclopedie structuree des algorithmes",
+    heroTitle: "Atlas des algorithmes de machine learning et deep learning",
+    heroCopy:
+      "Une base de connaissances structuree couvrant les modeles lineaires, les arbres, le clustering, la reduction de dimension, les Transformers, les modeles de diffusion, le reinforcement learning et le MLOps.",
+    browseLibrary: "Explorer la bibliotheque",
+    viewTracks: "Voir les parcours",
+    statAlgorithms: "Algorithmes",
+    statDomains: "Domaines",
+    statView: "Perspective",
+    introOneKicker: "Knowledge model",
+    introOneTitle: "Cartes d'algorithmes unifiees",
+    introOneText: "Chaque carte resume les taches, la difficulte, l'idee centrale, les usages, les forces, les limites et les prerequis.",
+    introTwoKicker: "Explore smoothly",
+    introTwoTitle: "Experience rapide et interactive",
+    introTwoText: "Recherche instantanee, filtres, comparaison et rendu modulaire rendent le site facile a lire et a etendre.",
+    introThreeKicker: "Broad coverage",
+    introThreeTitle: "Couverture des grands domaines",
+    introThreeText: "La bibliotheque couvre le ML classique, le deep learning, le NLP, la vision, la recommandation, les graphes, les modeles generatifs et le reinforcement learning.",
+    libraryKicker: "Algorithm library",
+    libraryTitle: "Bibliotheque d'algorithmes",
+    libraryText: "Recherchez, filtrez et comparez les algorithmes pour choisir rapidement une methode adaptee.",
+    searchLabel: "Recherche",
+    categoryLabel: "Domaine",
+    levelLabel: "Niveau",
+    sortLabel: "Tri",
+    allCategories: "Tous les domaines",
+    allLevels: "Tous les niveaux",
+    sortPriority: "Priorite d'apprentissage",
+    sortName: "Nom",
+    sortLevel: "Niveau",
+    compareTitle: "Comparaison",
+    compareText: "Selectionnez jusqu'a 3 algorithmes pour comparer les taches, forces et limites.",
+    mapKicker: "Knowledge map",
+    mapTitle: "Carte des connaissances",
+    mapText: "Comprenez les dependances depuis les bases mathematiques jusqu'au deploiement.",
+    tracksKicker: "Learning tracks",
+    tracksTitle: "Parcours d'apprentissage",
+    tracksText: "Choisissez un parcours selon votre objectif pour apprendre avec une route claire.",
+    glossaryKicker: "Glossary",
+    glossaryTitle: "Glossaire cle",
+    footerText: "© 2026 外星七号 Alien No.7. All rights reserved.",
+    searchPlaceholder: "Rechercher un algorithme, une tache ou un usage...",
+    result: (shown, total) => `${shown} algorithmes affiches sur ${total} entrees principales`,
+    compareEmpty: "Aucun algorithme selectionne.",
+    clearCompare: "Effacer",
+    compareAction: "Comparer",
+    detailAction: "Details",
+    maxCompare: "Selectionnez au maximum 3 algorithmes.",
+    strengths: "Forces",
+    limits: "Limites",
+    useCases: "Usages",
+    prereq: "Prerequis",
+    strongPoint: "Force",
+    limitation: "Limite"
   }
 };
 
@@ -958,6 +1022,132 @@ const termEn = {
   推理优化: "Inference optimization"
 };
 
+const termFr = {
+  入门: "Debutant",
+  进阶: "Intermediaire",
+  高级: "Avance",
+  监督学习: "Apprentissage supervise",
+  树模型: "Modeles d'arbres",
+  无监督学习: "Apprentissage non supervise",
+  降维与表示: "Reduction de dimension et representation",
+  异常检测: "Detection d'anomalies",
+  时间序列: "Series temporelles",
+  深度学习基础: "Bases du deep learning",
+  计算机视觉: "Vision par ordinateur",
+  序列模型: "Modeles de sequence",
+  "大模型与 NLP": "Grands modeles et NLP",
+  生成式模型: "Modeles generatifs",
+  自监督学习: "Apprentissage auto-supervise",
+  推荐系统: "Systemes de recommandation",
+  图学习: "Apprentissage sur graphes",
+  强化学习: "Apprentissage par renforcement",
+  因果推断: "Inference causale",
+  "MLOps 与优化": "MLOps et optimisation",
+  回归: "Regression",
+  预测: "Prediction",
+  解释性建模: "Modelisation interpretable",
+  特征选择: "Selection de variables",
+  正则化: "Regularisation",
+  分类: "Classification",
+  概率估计: "Estimation probabiliste",
+  风险评分: "Score de risque",
+  文本分类: "Classification de texte",
+  概率建模: "Modelisation probabiliste",
+  相似度检索: "Recherche par similarite",
+  小样本建模: "Modelisation avec peu de donnees",
+  规则提取: "Extraction de regles",
+  特征重要性: "Importance des variables",
+  排序: "Classement",
+  类别特征: "Variables categorielles",
+  聚类: "Clustering",
+  分群: "Segmentation",
+  向量量化: "Quantification vectorielle",
+  谱系分析: "Analyse hierarchique",
+  探索性分析: "Analyse exploratoire",
+  噪声识别: "Detection du bruit",
+  空间数据: "Donnees spatiales",
+  概率密度: "Densite probabiliste",
+  软分配: "Affectation souple",
+  降维: "Reduction de dimension",
+  去噪: "Debruitage",
+  可视化: "Visualisation",
+  "Embedding 分析": "Analyse d'embeddings",
+  局部结构: "Structure locale",
+  流形学习: "Apprentissage de varietes",
+  欺诈识别: "Detection de fraude",
+  质量监控: "Controle qualite",
+  边界学习: "Apprentissage de frontiere",
+  趋势建模: "Modelisation de tendance",
+  季节性分析: "Analyse de saisonnalite",
+  业务预测: "Prevision metier",
+  季节性: "Saisonnalite",
+  节假日效应: "Effets calendaires",
+  非线性建模: "Modelisation non lineaire",
+  图像分类: "Classification d'images",
+  检测: "Detection",
+  分割: "Segmentation",
+  特征提取: "Extraction de caracteristiques",
+  视觉骨干: "Backbone visuel",
+  图像分割: "Segmentation d'images",
+  医学影像: "Imagerie medicale",
+  像素级预测: "Prediction pixel par pixel",
+  目标检测: "Detection d'objets",
+  实时视觉: "Vision temps reel",
+  边缘部署: "Deploiement edge",
+  序列建模: "Modelisation de sequence",
+  文本: "Texte",
+  语音: "Voix",
+  对齐: "Alignement",
+  上下文聚合: "Agregation de contexte",
+  多模态: "Multimodal",
+  NLP: "NLP",
+  文本理解: "Comprehension de texte",
+  信息抽取: "Extraction d'information",
+  文本生成: "Generation de texte",
+  对话: "Dialogue",
+  智能体: "Agents",
+  表示学习: "Apprentissage de representations",
+  潜变量: "Variables latentes",
+  图像生成: "Generation d'images",
+  风格迁移: "Transfert de style",
+  数据增强: "Augmentation de donnees",
+  视频生成: "Generation video",
+  多模态生成: "Generation multimodale",
+  检索: "Recherche",
+  预训练: "Pre-entrainement",
+  推荐: "Recommandation",
+  协同过滤: "Filtrage collaboratif",
+  点击率预估: "Prediction de CTR",
+  稀疏特征: "Variables creuses",
+  特征交互: "Interactions de variables",
+  节点分类: "Classification de noeuds",
+  链接预测: "Prediction de liens",
+  图表示: "Representation de graphes",
+  半监督学习: "Apprentissage semi-supervise",
+  关系建模: "Modelisation de relations",
+  图注意力: "Attention sur graphes",
+  离散控制: "Controle discret",
+  策略学习: "Apprentissage de politique",
+  价值函数: "Fonction de valeur",
+  游戏智能体: "Agents de jeu",
+  离散动作: "Actions discretes",
+  深度强化学习: "Deep reinforcement learning",
+  策略优化: "Optimisation de politique",
+  连续控制: "Controle continu",
+  并行训练: "Entrainement parallele",
+  控制: "Controle",
+  异质处理效应: "Effets de traitement heterogenes",
+  因果分析: "Analyse causale",
+  政策评估: "Evaluation de politique",
+  因果效应: "Effet causal",
+  高维控制: "Controles en haute dimension",
+  经济计量: "Econometrie",
+  模型压缩: "Compression de modele",
+  部署优化: "Optimisation du deploiement",
+  迁移: "Transfert",
+  推理优化: "Optimisation d'inference"
+};
+
 const algorithmEn = {
   线性回归: ["Linear Regression", "Fits a linear relationship between features and a continuous target, making it a strong baseline for regression and explanation."],
   "岭回归与 Lasso": ["Ridge Regression and Lasso", "Adds L2 or L1 regularization to linear regression to control complexity and reduce overfitting."],
@@ -1027,6 +1217,11 @@ const trackData = {
     ["Machine Learning Engineer", "From basics to production", 78, ["Linear and logistic regression, Naive Bayes", "Decision trees, random forests, XGBoost, LightGBM", "Feature engineering, validation, model interpretation", "Deployment, monitoring, and drift detection"]],
     ["Deep Learning Research", "Architectures to generative models", 64, ["MLP, CNN, RNN, LSTM, GRU", "Attention, Transformer, Vision Transformer", "Self-supervised learning, contrastive learning, diffusion models", "Fine-tuning, distillation, quantization, multimodal systems"]],
     ["Business Data Science", "Analysis, forecasting, and decisions", 72, ["Clustering, dimensionality reduction, anomaly detection", "Time series, causal inference, recommender systems", "A/B testing, metrics, interpretability", "Automated reports and reproducible experiments"]]
+  ],
+  fr: [
+    ["Ingenieur machine learning", "Des bases a la production", 78, ["Regression lineaire et logistique, Naive Bayes", "Arbres de decision, forets aleatoires, XGBoost, LightGBM", "Feature engineering, validation, interpretation", "Deploiement, monitoring et detection de derive"]],
+    ["Recherche en deep learning", "Architectures et modeles generatifs", 64, ["MLP, CNN, RNN, LSTM, GRU", "Attention, Transformer, Vision Transformer", "Apprentissage auto-supervise, contrastif, diffusion", "Fine-tuning, distillation, quantification, multimodal"]],
+    ["Data science metier", "Analyse, prevision et decision", 72, ["Clustering, reduction de dimension, anomalies", "Series temporelles, causalite, recommandation", "A/B testing, metriques, interpretabilite", "Rapports automatises et experiences reproductibles"]]
   ]
 };
 
@@ -1042,6 +1237,17 @@ const glossaryData = {
     ["Prompt Engineering", "Designs instructions and context to guide language model outputs."],
     ["Model Drift", "A production model degrades when data distributions or target relationships change."],
     ["Interpretability", "The ability to understand why a model produced a prediction."]
+  ],
+  fr: [
+    ["Surapprentissage", "Le modele reussit sur les donnees d'entrainement mais generalise mal sur de nouvelles donnees."],
+    ["Compromis biais-variance", "Le biais mesure l'erreur systematique, la variance mesure la sensibilite aux changements de donnees."],
+    ["Validation croisee", "Decoupe les donnees en plusieurs plis pour evaluer plus robustement la generalisation."],
+    ["Feature engineering", "Transforme les donnees brutes en entrees plus utiles pour les algorithmes."],
+    ["Embedding", "Projette des objets discrets dans des vecteurs continus pour apprendre similarites et sens."],
+    ["Pre-entrainement et fine-tuning", "Apprend d'abord des representations generales, puis les adapte a une tache precise."],
+    ["Prompt engineering", "Concoit les instructions et le contexte pour guider les sorties d'un modele de langage."],
+    ["Derive de modele", "Un modele en production se degrade quand la distribution ou la relation cible change."],
+    ["Interpretabilite", "Capacite a comprendre pourquoi un modele produit une prediction."]
   ]
 };
 
@@ -1056,6 +1262,16 @@ const mapGroupsData = {
     ["Generative Models", ["VAE", "GAN", "Diffusion models", "Large language models"]],
     ["Decision Intelligence", ["Reinforcement learning", "Causal inference", "A/B testing", "Policy optimization"]],
     ["Production", ["Feature platform", "Model serving", "Monitoring", "Distillation and quantization"]]
+  ],
+  fr: [
+    ["Bases mathematiques", ["Algebre lineaire", "Probabilites", "Optimisation", "Theorie de l'information"]],
+    ["Machine learning classique", ["Modeles lineaires", "SVM", "Arbres", "Ensembles"]],
+    ["Non supervise et representations", ["Clustering", "Reduction de dimension", "Anomalies", "Auto-supervise"]],
+    ["Reseaux profonds", ["MLP", "CNN", "RNN", "Attention", "Transformer"]],
+    ["Domaines d'application", ["NLP", "Vision", "Recommandation", "Graphes"]],
+    ["Modeles generatifs", ["VAE", "GAN", "Diffusion", "Grands modeles de langage"]],
+    ["Intelligence decisionnelle", ["Reinforcement learning", "Inference causale", "A/B testing", "Optimisation de politique"]],
+    ["Production", ["Plateforme de variables", "Service de modele", "Monitoring", "Distillation et quantification"]]
   ]
 };
 
@@ -1067,6 +1283,7 @@ const els = {
   grid: document.querySelector("#algorithmGrid"),
   count: document.querySelector("#resultCount"),
   compare: document.querySelector("#compareList"),
+  clearCompare: document.querySelector("#clearCompare"),
   dialog: document.querySelector("#algorithmDialog"),
   dialogContent: document.querySelector("#dialogContent"),
   closeDialog: document.querySelector("#closeDialog"),
@@ -1088,6 +1305,7 @@ function t(key) {
 
 function tr(text) {
   if (state.lang === "zh") return text;
+  if (state.lang === "fr") return termFr[text] || termEn[text] || text;
   return termEn[text] || text;
 }
 
@@ -1098,6 +1316,11 @@ function getAlgorithmName(item) {
 
 function getAlgorithmSummary(item) {
   if (state.lang === "zh") return item.summary;
+  if (state.lang === "fr") {
+    const domain = tr(item.category).toLowerCase();
+    const tasks = translateArray(item.tasks).slice(0, 3).join(", ");
+    return `${getAlgorithmName(item)} est une methode de ${domain} utilisee pour ${tasks}. La carte resume son idee centrale, ses usages typiques, ses forces, ses limites et les prerequis utiles.`;
+  }
   return algorithmEn[item.name]?.[1] || item.summary;
 }
 
@@ -1195,6 +1418,7 @@ function renderCards() {
 
 function renderCompare() {
   const selected = algorithms.filter((item) => state.compare.has(item.name));
+  if (els.clearCompare) els.clearCompare.disabled = selected.length === 0;
   if (!selected.length) {
     els.compare.innerHTML = `<p>${t("compareEmpty")}</p>`;
     return;
@@ -1231,11 +1455,11 @@ function renderDialog(name) {
       <div class="detail-grid">
         <section class="detail-box">
           <h3>${t("strengths")}</h3>
-          <ul>${(state.lang === "zh" ? item.strengths : [getAlgorithmSummary(item), "Works well as part of a broader modeling toolkit.", "Useful when its assumptions match the data."]).map((text) => `<li>${text}</li>`).join("")}</ul>
+          <ul>${(state.lang === "zh" ? item.strengths : state.lang === "fr" ? [getAlgorithmSummary(item), "S'integre bien dans une boite a outils de modelisation.", "Pertinent lorsque ses hypotheses correspondent aux donnees."] : [getAlgorithmSummary(item), "Works well as part of a broader modeling toolkit.", "Useful when its assumptions match the data."]).map((text) => `<li>${text}</li>`).join("")}</ul>
         </section>
         <section class="detail-box">
           <h3>${t("limits")}</h3>
-          <ul>${(state.lang === "zh" ? item.limits : ["Requires validation against real data.", "Performance depends on feature quality, tuning, and deployment constraints.", "May need monitoring when data distribution changes."]).map((text) => `<li>${text}</li>`).join("")}</ul>
+          <ul>${(state.lang === "zh" ? item.limits : state.lang === "fr" ? ["Necessite une validation sur des donnees reelles.", "La performance depend des variables, du reglage et des contraintes de deploiement.", "Un suivi est utile lorsque la distribution des donnees change."] : ["Requires validation against real data.", "Performance depends on feature quality, tuning, and deployment constraints.", "May need monitoring when data distribution changes."]).map((text) => `<li>${text}</li>`).join("")}</ul>
         </section>
         <section class="detail-box">
           <h3>${t("useCases")}</h3>
@@ -1243,7 +1467,7 @@ function renderDialog(name) {
         </section>
         <section class="detail-box">
           <h3>${t("prereq")}</h3>
-          <ul>${(state.lang === "zh" ? item.prereq : ["Core machine learning concepts", "Evaluation metrics", "Data preprocessing and validation"]).map((text) => `<li>${text}</li>`).join("")}</ul>
+          <ul>${(state.lang === "zh" ? item.prereq : state.lang === "fr" ? ["Concepts fondamentaux du machine learning", "Metriques d'evaluation", "Preparation des donnees et validation"] : ["Core machine learning concepts", "Evaluation metrics", "Data preprocessing and validation"]).map((text) => `<li>${text}</li>`).join("")}</ul>
         </section>
       </div>
     </div>
@@ -1252,7 +1476,7 @@ function renderDialog(name) {
 }
 
 function renderMap() {
-  els.map.innerHTML = mapGroupsData[state.lang]
+  els.map.innerHTML = (mapGroupsData[state.lang] || mapGroupsData.zh)
     .map(
       ([title, items], index) => `
       <article class="map-node" style="border-left-color: ${["#2364db", "#008c8c", "#2f8d46", "#a66f00"][index % 4]}">
@@ -1265,7 +1489,7 @@ function renderMap() {
 }
 
 function renderGlossary() {
-  els.glossary.innerHTML = glossaryData[state.lang]
+  els.glossary.innerHTML = (glossaryData[state.lang] || glossaryData.zh)
     .map(
       ([term, text]) => `
       <article class="glossary-item">
@@ -1278,7 +1502,7 @@ function renderGlossary() {
 }
 
 function renderTracks() {
-  els.tracks.innerHTML = trackData[state.lang]
+  els.tracks.innerHTML = (trackData[state.lang] || trackData.zh)
     .map(
       ([title, meta, progress, steps]) => `
       <article class="track-card">
@@ -1292,7 +1516,7 @@ function renderTracks() {
               (step, index) => `
               <li>
                 <span class="step-number">${index + 1}</span>
-                <span><strong>${state.lang === "zh" ? `阶段 ${index + 1}` : `Stage ${index + 1}`}</strong>${step}</span>
+                <span><strong>${state.lang === "zh" ? `阶段 ${index + 1}` : state.lang === "fr" ? `Etape ${index + 1}` : `Stage ${index + 1}`}</strong>${step}</span>
               </li>
             `
             )
@@ -1306,8 +1530,13 @@ function renderTracks() {
 }
 
 function renderStaticText() {
-  document.documentElement.lang = state.lang === "zh" ? "zh-CN" : "en";
-  document.title = state.lang === "zh" ? "Algorithm Atlas | 机器学习与深度学习知识库" : "Algorithm Atlas | Machine Learning and Deep Learning Library";
+  document.documentElement.lang = state.lang === "zh" ? "zh-CN" : state.lang === "fr" ? "fr" : "en";
+  document.title =
+    state.lang === "zh"
+      ? "Algorithm Atlas | 机器学习与深度学习知识库"
+      : state.lang === "fr"
+        ? "Algorithm Atlas | Bibliotheque de machine learning et deep learning"
+        : "Algorithm Atlas | Machine Learning and Deep Learning Library";
   document.querySelectorAll("[data-i18n]").forEach((node) => {
     node.textContent = t(node.dataset.i18n);
   });
@@ -1367,9 +1596,16 @@ function bindEvents() {
   els.dialog.addEventListener("click", (event) => {
     if (event.target === els.dialog) els.dialog.close();
   });
+  if (els.clearCompare) {
+    els.clearCompare.addEventListener("click", () => {
+      state.compare.clear();
+      renderCards();
+      renderCompare();
+    });
+  }
   els.langButtons.forEach((button) => {
     button.addEventListener("click", () => {
-      state.lang = button.dataset.lang;
+      state.lang = ["zh", "en", "fr"].includes(button.dataset.lang) ? button.dataset.lang : "zh";
       localStorage.setItem("atlas-lang", state.lang);
       renderAll();
     });

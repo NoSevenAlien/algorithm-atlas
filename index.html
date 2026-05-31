@@ -28,6 +28,7 @@
       <div class="language-switch" aria-label="Language switch">
         <button class="lang-button is-active" type="button" data-lang="zh">中文</button>
         <button class="lang-button" type="button" data-lang="en">EN</button>
+        <button class="lang-button" type="button" data-lang="fr">FR</button>
       </div>
     </header>
 
@@ -121,7 +122,10 @@
 
         <div class="library-layout">
           <aside class="compare-panel" aria-label="算法对比">
-            <h3 data-i18n="compareTitle">对比清单</h3>
+            <div class="compare-header">
+              <h3 data-i18n="compareTitle">对比清单</h3>
+              <button class="clear-compare" id="clearCompare" type="button" data-i18n="clearCompare">清除</button>
+            </div>
             <p data-i18n="compareText">在算法卡片中勾选最多 3 个算法，查看任务、优势和限制差异。</p>
             <div id="compareList" class="compare-list"></div>
           </aside>
@@ -168,6 +172,6 @@
       <p data-i18n="footerText">© 2026 外星七号 Alien No.7. All rights reserved.</p>
     </footer>
 
-    <script type="module" src="./app.js?v=20260530-2"></script>
+    <script type="module" src="./app.js?v=20260531-1"></script>
   </body>
 </html>
